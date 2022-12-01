@@ -3,7 +3,7 @@ const Category = require("../models/categoryModel");
 exports.createCategoryService = async (data) => {
     console.log(data, "daaaata")
     const slug = data.name.toLowerCase().split(" ").join("-");
-    const send = { name: data.name, slug, image: `http://localhost:7900/${data.image}` }
+    const send = { name: data.name, slug, image: `https://porduct-server.vercel.app//${data.image}` }
     const result = await Category.create(send);
     return result;
 };
